@@ -1,0 +1,18 @@
+    <div class="bg-white p-[3rem]">
+      <p class="font-bold text-[#292929] text-xl"> Back to your digital life</p>
+      <p class="font-normal text-[#545454] text-sm"> Choose one of the option to go</p>
+      <form [formGroup]="form" className="flex justify-center flex-col mt-5 px-5">
+        <app-input type="text" formControlName="email" placeholder="email" />
+        <app-input type="password" formControlName="password" placeholder="password" />
+        
+        <p class="font-normal text-[#4F4F4F] text-xs"> Or continue with</p>
+        <div class="flex justify-center items-center my-10">
+          <div class="bg-[#F7F7F7]">구글</div>
+          <div class="bg-[#F7F7F7]">메타</div>
+          <div class="bg-[#F7F7F7]">애플</div>
+        </div>
+        <button class=" bg-[#0366FF] text-[#FFFFFF] w-full h-12 py-2 px-4 rounded" (click)="submit()">
+          Log in
+        </button>
+      </form>
+    </div>
