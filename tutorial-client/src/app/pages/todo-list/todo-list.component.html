@@ -1,0 +1,27 @@
+<div class="bg-white flex justify-center flex-col px-[1.5rem] border-[0.1rem] rounded-lg">
+    <h1 class="font-bold text-[#292929] text-[3rem] mt-[1rem] mb-[0.5rem] font-mono text-left"> To-do-List</h1>
+
+    <form [formGroup]="form" (ngSubmit)="addTask()" className="w-full max-w-xl py-1">
+        <div class="flex items-center py-1 border-b-[0.1rem] border-gray-300">
+            <!-- <app-input type="text" formControlName="task" placeholder="Add a task" /> -->
+            <lepi-input-text formControlName="task" class="flex-1" placeholder="할일을 입력해 주세요." />
+            <lepi-button type="submit">저장</lepi-button>
+        </div>
+    </form>
+
+    <div auto-animate class="my-5">
+        @for (task of tasks(); track i; let i = $index) {
+        <div class="flex items-center justify-between px-4 py-2 rounded-md shadow-md">
+            <p>{{task.content}}</p>
+            <div class="flex items-center gap-4">
+                <p class="mx-5">{{task.date | date:'y-MM-dd HH:mm:ss'}}</p>
+                <button  (click)="deleteTask(i)">
+                    <span>X</span>
+                </button>
+            </div>
+        </div>
+        }
+    </div>
+
+
+</div>

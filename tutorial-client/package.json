@@ -21,6 +21,8 @@
     "@angular/platform-server": "^17.2.0",
     "@angular/router": "^17.2.0",
     "@angular/ssr": "^17.2.0",
+    "@nextcss/color-tools": "^1.0.9",
+    "@team-lepisode/components": "^1.17.46",
     "express": "^4.18.2",
     "rxjs": "~7.8.0",
     "tailwind": "^4.0.0",
