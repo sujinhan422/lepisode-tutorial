@@ -1,0 +1,30 @@
+<table class="border-collapse table-fixed">
+    <thead class="bg-[#69a4ff]">
+        <tr class="text-[1.1rem] text-white mx-[0.5rem] items-center justify-between px-4 py-2">
+            <th class="px-10 py-1 border border-slate-300">번호</th>
+            <th class="px-40 py-1 border border-slate-300">내용</th>
+            <th class="px-16 py-1 border border-slate-300">작성일</th>
+            <th class="px-10 py-1 border border-slate-300">-</th>
+        </tr>
+    </thead>
+    <tbody class="bg-white text-[1rem] text-center items-center justify-between py-2">
+        @for (boardVo of boardVo(); track i; let i = $index) {
+        <tr>
+            <td class="px-4 py-2 border">{{i+1}}</td>
+            <td class="px-4 py-2 border">{{boardVo.content}}</td>
+            <td class="px-4 py-2 border">{{boardVo.date | date:'y-MM-dd'}}</td>
+            <td class="px-4 py-2 border"> <button (click)="deleteBoard(i)">
+                    <span>삭제</span>
+                </button></td>
+
+        </tr>
+        }
+    </tbody>
+</table>
+
+<form [formGroup]="form" (ngSubmit)="addBoard()" className="w-full max-w-xl py-1">
+    <div class="flex items-center justify-between my-4 rounded-md border-[0.1rem] border-gray-300">
+        <input class="flex-1 py-2 text-center" type="text" formControlName="write" placeholder="내용을 입력해주세요" />
+        <button class="bg-[#69a4ff] text-[#FFFFFF] ml-1 py-2 px-4 rounded" type="submit">저장</button>
+    </div>
+</form>
